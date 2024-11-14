@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <header>
-        <h1>My Awesome Website</h1>
+        <div class="logo">
+            <img src="/static/images/red_cafe_logo.jpg" alt="Red Cafe Logo" >
+        </div>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/add_numbers">Add Numbers</a></li>
+                <li><a href="/about">About Us</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
     <footer>
-        <p>&copy; 2024 My Awesome Website</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Red Cafe Bistro. All rights reserved.</p>
+            <p>Located at Buchanan Street, Glasgow</p>
+            <p>Email: <a href="mailto:info@redcafebistro.com">info@redcafebistro.com</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com/redcafebistro" target="_blank">Facebook</a> | 
+            <a href="https://twitter.com/redcafebistro" target="_blank">Twitter</a> | 
+            <a href="https://instagram.com/redcafebistro" target="_blank">Instagram</a>
+        </div>
     </footer>
 </body>
 </html>
